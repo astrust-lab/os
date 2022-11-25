@@ -1,0 +1,84 @@
+After the formal Japanese section, there is an UNOFFICIAL English translation.
+
+以下、注意してお読みください。AlexandriteOSをインストール、ダウンロード、使用することにより、
+全てのユーザーはこのEULAの全ての条項に同意されたものとします。
+このEULAに同意されない場合は、本ソフトウェアをダウンロード、インストールまたは使用することはできません。
+
+i. AlexandriteOSの利用は全て自己責任です。
+   AlexandriteOSの利用したことによって生じたいかなる形の損害も補償しません。
+
+ii. AlexandriteOSは様々なソフトウェアで構成されるLinuxディストリビューションで、
+        多数のソフトウェアコンポーネントを含みます。 
+        これにはProject Alexandriteによって開発されその開発者が著作権を保有するもの
+        （以下AlexandriteOS固有のファイル）とサードパーティによって開発され、
+        その作者が著作権を保有するもの（以下サードパーティコンポーネント）に分かれます。
+        各コンポーネントのライセンスは、一般的にそのコンポーネントのソースコード内に含まれています。
+        このEULAが特定のコンポーネントの使用許諾条件を超えて、ユーザーの権利を制限したり、
+        権利を付与したりすることはありません。
+
+iii. AlexandriteOSの固有のファイル、ブランドの著作権、著作者人格権は全て
+     Project Alexandrite (nexryai)に属します。
+          またAlexandriteOSのロゴの著作権はAblazeに属します。
+
+iv. AlexandriteOSに同梱されているサードパーティコンポーネントの著作権は各著作権者に属します。
+        それぞれのファイルについては各コンポーネントのライセンスが適用されます。 
+
+v. AlexandriteOSのサードパーティコンポーネントには一部特許で保護されている技術を利用している
+　   ソフトウェアが含まれる可能性があります。 
+      しかしながら、これらのコンポーネントの作者は該当のプログラムが特許を侵害しているか把握できておらず、
+      実際に特許で保護されているアルゴリズムが使用されているかは不明です。 
+      これらのコンポーネントのライセンスは特許で保護された技術が使用されていることが明らかな場合を除き
+      再配布を許可しているため、AlexandriteOSにこれらのコンポーネントは埋め込まれています。 
+      詳細は該当のコンポーネントのウェブサイトをご確認ください。
+
+vi. AlexandriteOSには著作権保護技術が適用されているディスクの復号化ソフトウェアが含まれます。
+       日本国の著作権法では再生を目的としたコピーガードの回避は合法です。
+       かしながら国によっては著作権法あるいはその他法律、条例に違反する恐れがあります。ご注意ください。
+
+vii. AlexandriteOSのブランド、ロゴは日本、及び各国の著作権法により保護されています。
+
+以上。
+
+=================
+
+ここから下の部分は機械翻訳を使用して翻訳した非公式な英語訳です。
+上記の日本語部分のみ法的に有効であることに注意してください。
+
+THE FOLLOWING SECTION IS AN UNOFFICIAL ENGLISH TRANSLATION MADE USING MACHINE TRANSLATION. 
+PLEASE NOTE THAT ONLY THE JAPANESE PORTION OF THE ABOVE IS LEGALLY VALID.
+
+Please read the following carefully: 
+By installing, downloading, and using AlexandriteOS, all users agree to all the terms of this EULA. 
+If you do not agree to this EULA, you may not download, install or use the Software.
+
+i. Your use of AlexandriteOS is entirely at your own risk and you will not be compensated for any 
+   form of damages resulting from your use of AlexandriteOS.
+
+ii. AlexandriteOS is a Linux distribution consisting of various software and includes 
+    many software components. 
+    These are divided into those developed by Project Alexandrite and 
+    copyrighted by the developer ("AlexandriteOS Specific Files") and those developed 
+    by third parties and copyrighted by their authors ("Third Party Components").
+    The license for each component is generally contained within the source code of that component.
+    This EULA does not limit or grant any rights to the user beyond the license terms of 
+    the specific component.
+
+iii. All copyrights and moral rights in the proprietary files and brands of AlexandriteOS belong to 
+     Project Alexandrite (nexryai). The AlexandriteOS logo is copyrighted by Ablaze.
+
+iv. Copyrights of third party components included in AlexandriteOS belong to their respective 
+    copyright holders. 
+    The license of each component applies to each file. This includes proprietary software.
+
+v. Third party components of AlexandriteOS may include software that utilizes some patent-protected technology. 
+   However, the authors of these components are not aware of whether their programs infringe patents, 
+   and it is not known whether patent-protected algorithms are actually used. 
+   The licenses for these components permit redistribution except where it is clear that patent-protected 
+   technology is being used, so these components are embedded in AlexandriteOS. 
+   Please refer to the relevant component's website for more information.
+
+vi. AlexandriteOS contains disk decryption software that applies copyright protection technology. 
+    Under Japanese copyright law, it is legal to circumvent copy protection for playback purposes.
+    However, it may violate copyright law or other laws and ordinances in some countries. Please be aware of this.
+
+vii. AlexandriteOS brand and logo are protected by copyright laws in Japan and other countries.

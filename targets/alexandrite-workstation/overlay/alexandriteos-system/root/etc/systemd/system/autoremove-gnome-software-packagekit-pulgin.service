@@ -1,0 +1,8 @@
+[Unit]
+Description=remove gnome-software PackageKit plugins
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rm -f /usr/lib64/gnome-software/plugins-17/libgs_plugin_packagekit.so
+ExecStart=/usr/bin/rm -f /usr/lib64/gnome-software/plugins-17/libgs_plugin_packagekit-refresh.so
+ExecStart=/usr/bin/rm -f /usr/lib64/gnome-software/plugins-17/libgs_plugin_packagekit-refine-repos.so

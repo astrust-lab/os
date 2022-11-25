@@ -1,0 +1,8 @@
+[update-non-oss]
+name=update-non-oss
+enabled=1
+autorefresh=1
+baseurl=https://twrepo.opensuse.id/update/tumbleweed-non-oss/
+path=/
+type=rpm-md
+keeppackages=0

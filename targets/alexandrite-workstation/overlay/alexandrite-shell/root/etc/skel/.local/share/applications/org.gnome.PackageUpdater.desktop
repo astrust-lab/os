@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=パッケージアップデーター
+NoDisplay=true
+Comment=システムにインストールされたパッケージの更新
+Icon=system-software-update
+OnlyShowIn=GNOME;
+X-GNOME-UsesNotifications=true
+Exec=gpk-update-viewer
+Actions=
+Categories=GNOME;GTK;System;System-Tools;
+Keywords=Updates;Upgrade;
+StartupNotify=true

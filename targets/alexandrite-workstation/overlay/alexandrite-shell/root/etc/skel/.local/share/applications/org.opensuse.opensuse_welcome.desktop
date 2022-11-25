@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Welcome
+GenericName=Welcome Utility
+NoDisplay=true
+Comment=The openSUSE Welcome utility.
+Icon=org.opensuse.opensuse_welcome
+Exec=/usr/bin/opensuse-welcome
+Actions=
+Categories=Documentation;Qt;System;System-Tools;

@@ -1,0 +1,7 @@
+[alexandrite-os]
+name=AlexandriteOS repository
+enabled=1
+autorefresh=1
+baseurl=https://download.opensuse.org/repositories/home:/alexandrite-os/openSUSE_Tumbleweed/
+gpgcheck=1
+gpgkey=https://download.opensuse.org/repositories/home:/alexandrite-os/openSUSE_Tumbleweed/repodata/repomd.xml.key

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=afterInstall
+Comment=After Install prosess
+Exec=bash /usr/share/alexandrite/afterInstall.sh
+StartupNotify=false

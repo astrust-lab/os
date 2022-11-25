@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Fix extensions
+Comment=enable gnome-shell extensions
+Exec=/usr/bin/dconf write /org/gnome/shell/disable-user-extensions false
+StartupNotify=false

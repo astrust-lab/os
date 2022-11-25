@@ -1,0 +1,30 @@
+[Plymouth Theme]
+Name=adwaita-blue-light
+Description=adwaita-blue-light
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/naiad
+ScriptFile=/usr/share/plymouth/themes/naiad/naiad.script
+
+[updates]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Installing Updates...
+SubTitle=Do not turn off your computer
+
+[system-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Upgrading System...
+SubTitle=Do not turn off your computer
+
+[firmware-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+UseFirmwareBackground=true
+Title=Upgrading Firmware...
+SubTitle=Do not turn off your computer

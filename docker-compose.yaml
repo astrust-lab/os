@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+version: '3.7'
+
+services:
+  web:
+    image: "awesometic/h5ai"
+    volumes:
+      - ./repo:/h5ai
+    ports:
+      - 127.0.0.1:9090:80
+
+  repo:
+    image: "nexryai/astrust-repo-server:latest"
+    volumes:
+      - ./repo:/repo
+    tmpfs:
+      - /rpm
+ 

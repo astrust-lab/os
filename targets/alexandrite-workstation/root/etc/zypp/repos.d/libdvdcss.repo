@@ -1,0 +1,7 @@
+[http-opensuse-guide.org-d9833031]
+name=libdvdcss repository
+enabled=1
+autorefresh=1
+baseurl=http://opensuse-guide.org/repo/openSUSE_Tumbleweed/
+type=rpm-md
+keeppackages=0

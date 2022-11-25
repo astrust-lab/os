@@ -1,0 +1,11 @@
+NAME="AlexandriteOS"
+ID="opensuse-tumbleweed"
+ID_LIKE="opensuse suse"
+VERSION_ID="3.12"
+PRETTY_NAME="AlexandriteOS"
+ANSI_COLOR="0;32"
+BUG_REPORT_URL="https://alexandriteos.org"
+HOME_URL="https://alexandriteos.org"
+DOCUMENTATION_URL="https://alexandriteos.org"
+LOGO="distributor-logo-alexandrite"
+

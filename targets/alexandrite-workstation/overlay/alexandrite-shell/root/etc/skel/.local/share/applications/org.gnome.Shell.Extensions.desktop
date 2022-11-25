@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=拡張機能
+Icon=org.gnome.Shell.Extensions
+OnlyShowIn=GNOME;
+Actions=
+Categories=X-GNOME-Other;

@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+
+#
+# GLORY TO UKRAINE
+#
+
+
+cat <<EOS
+===============================
+
+AlexandriteOS debug helper v1.00
+
+(c)2022 Project Alexandrite
+
+
+===============================
+EOS
+
+
+while true
+do
+
+cat <<EOS
+
+
+select operation
+
+1. View system journal log
+2. Dump journal logs
+3. Load shell patch
+4. Unload shell patch
+5. Debug shell css
+6. Reload shell debug css
+7. Dump dconf registry to plain text
+8. Analyze boot chain
+9. Install debug packages
+10. Set org.alexandriteos.userspace_version to "100"
+11. Exec userspace update script
+12. Exit
+
+
+EOS
+
+echo -n ">>> "
+read operation
+
+
+if [ "${operation}" = 1 ]; then
+	sudo journalctl --boot
+
+elif [ "${operation}" = 2 ]; then
+    sudo journalctl --boot --no-pager > ~/system-journal.log
+    journalctl --boot --no-pager > ~/user-journal.log
+
+elif [ "${operation}" = 3 ]; then
+    echo "================="
+    gnome-extensions list
+    echo "================="
+    echo -n "Patch name? >>> "
+    read extension_id
+    gnome-extensions enable ${extension_id}
+
+elif [ "${operation}" = 4 ]; then
+    echo "================="
+    gnome-extensions list
+    echo "================="
+    echo -n "Patch name? >>> "
+    read extension_id
+    gnome-extensions disable ${extension_id}
+
+elif [ "${operation}" = 5 ]; then
+    return 0
+elif [ "${operation}" = 6 ]; then
+    return 0
+elif [ "${operation}" = 7 ]; then
+    dconf dump / > ~/dconf.dump
+    echo "saved exported data to ~/dconf.dump"
+
+elif [ "${operation}" = 8 ]; then
+    systemd-analyze plot > ~/plot.svg
+    echo "saved result to ~/plot.svg"
+
+elif [ "${operation}" = 9 ]; then
+    sudo zypper --non-interactive in dconf-editor sysprof gnome-extensions
+
+elif [ "${operation}" = 10 ]; then
+	dconf write /org/alexandriteos/userspace_version "100"
+
+elif [ "${operation}" = 11 ]; then
+	bash /usr/share/system-updates/upd.sh
+	
+elif [ "${operation}" = 12 ]; then
+	break
+
+else
+	echo "Invalid selection (press enter to enter again...)"
+	read Wait
+	clear
+
+fi
+
+
+
+done

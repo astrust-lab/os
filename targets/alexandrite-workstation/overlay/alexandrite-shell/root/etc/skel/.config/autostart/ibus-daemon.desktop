@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=ibus daemon
+Comment=
+Exec=ibus-daemon -r -d -x
+StartupNotify=false

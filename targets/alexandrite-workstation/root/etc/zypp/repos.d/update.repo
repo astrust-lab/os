@@ -1,0 +1,8 @@
+[update]
+name=メインの更新用リポジトリ
+enabled=1
+autorefresh=1
+baseurl=https://twrepo.opensuse.id/update/tumbleweed/
+path=/
+type=rpm-md
+keeppackages=0

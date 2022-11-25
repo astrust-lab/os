@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Setup Your Encrypted Private Directory
+GenericName=Setup Your Encrypted Private Directory
+NoDisplay=true
+Icon=/usr/share/ecryptfs-utils/ecryptfs-mount-private.png
+Exec=/usr/bin/ecryptfs-setup-private
+Terminal=true
+Actions=
+Categories=Security;System;System-Tools;

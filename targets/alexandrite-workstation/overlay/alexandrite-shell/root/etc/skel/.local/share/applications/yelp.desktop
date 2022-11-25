@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=ヘルプ
+NoDisplay=true
+Comment=GNOME のヘルプを表示します
+Icon=org.gnome.Yelp
+OnlyShowIn=GNOME;Unity;
+Exec=yelp %u
+Actions=
+MimeType=x-scheme-handler/ghelp;x-scheme-handler/help;x-scheme-handler/info;x-scheme-handler/man;
+Categories=Core;Documentation;GNOME;GTK;Utility;X-GNOME-Utilities;
+Keywords=documentation;information;manual;help;ドキュメンテーション;ドキュメント;情報;インフォメーション;マニュアル;ヘルプ;
+StartupNotify=true

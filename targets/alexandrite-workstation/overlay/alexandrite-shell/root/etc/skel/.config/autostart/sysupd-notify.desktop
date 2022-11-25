@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=system-update-notify
+Comment=system update notify
+Exec=bash /usr/libexec/sysupd-notify
+StartupNotify=false

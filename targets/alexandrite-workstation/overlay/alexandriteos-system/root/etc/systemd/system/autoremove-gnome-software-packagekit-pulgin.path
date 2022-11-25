@@ -1,0 +1,8 @@
+[Unit]
+Description=remove gnome-software PackageKit plugins
+
+[Path]
+PathChanged=/usr/lib64/gnome-software/plugins-17/
+
+[Install]
+WantedBy=default.target

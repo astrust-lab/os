@@ -1,0 +1,8 @@
+[Unit]
+Description=os-release fixer
+
+[Path]
+PathChanged=/usr/lib/os-release
+
+[Install]
+WantedBy=default.target
