@@ -1,0 +1,72 @@
+#! /usr/bin/env bash
+
+#
+#     (c)2020-2022 Project Alexandrite
+#
+#     copilot.sh
+#
+
+set -eu
+trap sigint sigint
+trap error_exit ERR
+
+
+function sigint() {
+    # この関数内ではエラーを無視する
+    set +e
+
+    _msg_error "割込を検出。強制終了します。"
+    
+    exit 1    
+}
+
+function error_exit() {
+    # この関数内ではエラーを無視する
+    set +e
+
+    _msg_error "エラーを検出。中止します。"
+  
+    exit 1    
+}
+
+
+
+function _msg_error(){ echo -e "\e[31m✗\e[m" "[ERROR] ${*}" >&2; }
+function _msg_warn (){ echo -e "\e[33m!\e[m" "[WARNING] ${*}" >&1; }
+function _msg_info (){ echo -e "\e[32m✓\e[m" "[INFO] ${*}" >&1; }
+function _msg_debug (){ [[ ${debug_mode} = true ]] && echo -e "\e[34mi\e[m" "[DEBUG] ${*}" >&1; }
+
+
+current_dir="$(cd "$(dirname "${0}")" && pwd)"
+target=${1}
+
+
+cd ${current_dir}/targets/${target}/copilot
+
+copilot_list_var=`find * -maxdepth 0 -type d`
+copilot_list=($copilot_list_var)
+copilot_counts=${#copilot_list[@]}
+ 
+
+while [[ $copilot_counts -gt 0 ]]; do
+
+    copilot_counts=$(( copilot_counts - 1 ))
+    copilot_name=${copilot_list[$copilot_counts]}
+    _msg_info "${copilot_name}を読み込みます。"
+
+    source "${current_dir}/targets/${target}/copilot/${copilot_name}/copilot.conf"
+
+    cd ${current_dir}/targets/${target}/copilot/${copilot_name}
+    bash ${current_dir}/targets/${target}/copilot/${copilot_name}/${copilot_name}.sh
+
+    read -p "Hit enter: "
+
+    rm -rf ${current_dir}/targets/${target}/overlay.old
+    cp -r ${current_dir}/targets/${target}/overlay ${current_dir}/targets/${target}/overlay.old
+
+    rm -rf ${current_dir}/targets/${target}/overlay/${cleandir}
+    cp -r ${current_dir}/targets/${target}/copilot/${copilot_name}/root/* ${current_dir}/targets/${target}/overlay/
+    
+    rm -rf ${current_dir}/targets/${target}/copilot/${copilot_name}/root
+
+done

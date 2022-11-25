@@ -1,6 +1,0 @@
-[Unit]
-Description=os-release fixer
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/cp -f /usr/share/alexandrite/os-release /usr/lib/

@@ -258,33 +258,7 @@ fi
 target_basename=`basename ${target}`
 
 
-# パッケージのデプロイとオーバーレイディレクトリのコピー
-if [[ ${build_type} = nightly ]]; then
-
-    [[ -d "${target}/overlay" ]] && cp -r ${target}/overlay/*/root "tmp/config/"
-
-elif [[ ${build_type} = release ]]; then
-
-    # 意思確認
-    _msg_warn "リリースビルドとデプロイを行います。これは既存の環境にもこの変更がアップデートとして配布されることを意味します！"
-    read -p "上記の文章を理解した場合リターンキーを押してください: "
-
-    # デプロイ
-    _msg_info "パッケージをデプロイします"
-
-    _msg_info "ユーザー権限で ./buildPkg.main.sh -t ${target_basename} を実行してください"
-
-    read -p "ビルドサービス側でのビルドが完了したらリターンキーを押して続行してください: "
-
-
-else
-    _msg_error "変数に予期せぬ値（build_type=${build_type}）が代入されています。中止します。"
-    exit 1 
-fi
-
-
-cp -r "${target}/root" "tmp/config/"
-cp -r "${target}/I18n/${locale}/root" "tmp/config/"
+cp -r "${target}/overlay" "tmp/config/"
 cp "${target}/final_process.sh" "tmp/config/"
 [[ -f "${target}/bootstrap.sh" ]] && cp "${target}/bootstrap.sh" "tmp/config/"
 mv "tmp/config/final_process.sh" "tmp/config/config.sh"
