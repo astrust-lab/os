@@ -208,57 +208,13 @@ fi
 mkdir -p out tmp/kiwi tmp/config
 
 _msg_info "レシピからkiwi-ng向けの設定ファイルを生成します。"
-mkdir tmp/config/root
+#mkdir tmp/config/root
 mkdir tmp/beaver
-
-# ユニット機能実行
-# unit.confが存在するか確認
-if [ -f "${target}/unit.conf" ]; then
-    _msg_info "ユニット設定ファイル${target}/unit.confを読み込みます。"
-
-    # 設定読み込み
-    source "${target}/unit.conf" 
-
-    # unit.confのunitsの値を配列に代入
-    use_unit=($units)
-
-    _msg_info "ターゲットディレクトリ：${target}"
-
-    unit_counts=${#use_unit[@]}
-
-    while [[ $unit_counts -gt 0 ]]; do
-
-        unit_counts=$(( unit_counts - 1 ))
-        unit_name=${use_unit[$unit_counts]}
-        _msg_info "ユニット${unit_name}を読み込みます。"
-
-        # ディレクトリ内にオーバーレイディレクトリが存在すればコピー
-        _msg_info "ユニット${unit_name}のオーバーレイディレクトリをコピーします。"
-        [[ -d "${current_dir}/units/${unit_name}/share/root" ]] && cp -r "units/${unit_name}/share/root" "tmp/config/"
-        [[ -d "${current_dir}/units/${unit_name}/${base_dist}/root" ]] && cp -r "units/${unit_name}/${base_dist}/root" "tmp/config/"
-
-        # パッケージリストがあれば追記
-        _msg_info "ユニット${unit_name}のパッケージリストをマージします。"
-        [[ -f "${current_dir}/units/${unit_name}/share/unit.packages" ]] && cat "units/${unit_name}/share/unit.packages" >> tmp/beaver/main.packages.tmp
-        [[ -f "${current_dir}/units/${unit_name}/${base_dist}/unit.packages" ]] && cat "units/${unit_name}/${base_dist}/unit.packages" >> tmp/beaver/main.packages.tmp
-
-        # スクリプトがあれば実行 (引数: ディストロ名)
-        _msg_info "ユニット${unit_name}のunit.shを実行します。"
-        [[ -d "${current_dir}/tmp/config/root" ]] && cd "tmp/config/root"
-        [[ -f "${current_dir}/units/${unit_name}/share/unit.sh" ]] && bash ${current_dir}/units/${unit_name}/share/unit.sh $specification
-        [[ -f "${current_dir}/units/${unit_name}/${base_dist}/unit.sh" ]] && bash ${current_dir}/units/${unit_name}/${base_dist}/unit.sh $specification
-
-
-    done   
-
-else
-    _msg_info "おっと！ ${target}/unit.confが見つかりません。ユニットを利用しません。"
-fi
 
 target_basename=`basename ${target}`
 
 
-cp -r "${target}/overlay" "tmp/config/"
+cp -r "${target}/overlay" "tmp/config/root"
 cp "${target}/final_process.sh" "tmp/config/"
 [[ -f "${target}/bootstrap.sh" ]] && cp "${target}/bootstrap.sh" "tmp/config/"
 mv "tmp/config/final_process.sh" "tmp/config/config.sh"
