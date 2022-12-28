@@ -1,0 +1,27 @@
+on:
+  push:                 
+    branches:           
+      - main    
+name: Build and Deploy  
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master    
+      - name: build
+        run: |
+         pip install kiwi
+         ./mkiso.sh -t alexandrite-workstation
+
+      #- name: FTP Upload
+      #  uses: SamKirkland/FTP-Deploy-Action@2.0.0   
+      #  env:                                        
+      #    FTP_SERVER: ${{ secrets.FTP_SERVER }}     
+      #    FTP_USERNAME: ${{ secrets.FTP_USERNAME }} 
+      #    FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
+      #    LOCAL_DIR: public
+      #    REMOTE_DIR: "/data/floorp-linux/flathub-builds"
+
+
+
