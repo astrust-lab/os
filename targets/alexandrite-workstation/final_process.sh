@@ -47,8 +47,8 @@ systemctl enable firewalld
 ln -fs /usr/lib/systemd/system/graphical.target /etc/systemd/system/default.target
 
 # set nopassword login for live user
-groupadd nopasswdlogin
-usermod -aG nopasswdlogin live
+#groupadd nopasswdlogin
+#usermod -aG nopasswdlogin live
 
 # fix sudoers file permission
 chmod 440 /etc/sudoers
@@ -75,11 +75,6 @@ dconf update
 # fix extension files parmission
 #chmod 644 /usr/share/gnome-shell/extensions/*/metadata.json
 
-# import gpg keys and instsll some packages
-#printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | tee -a /etc/zypp/repos.d/vscodium.repo
-#srpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
-#zypper --gpg-auto-import-keys refresh
-#zypper --non-interactive in codium
 
 # disable GDM logo
 sudo -u gdm gsettings set org.gnome.login-screen logo ''
@@ -101,15 +96,11 @@ rm -f /usr/lib64/gnome-software/plugins-*/libgs_plugin_packagekit-refine-repos.s
 systemctl enable autoremove-gnome-software-packagekit-pulgin.service
 systemctl enable autoremove-gnome-software-packagekit-pulgin.path
 
-# enable alexandriteos-osinfo-fixer
-systemctl enable alexandriteos-osinfo-fixer.service
-systemctl enable alexandriteos-osinfo-fixer.path
 
 # remove packages
 zypper -n rm gnome-terminal gnome-terminal-lang nautilus-extension-terminal lftp easytag nautilus-plugin-easytag gedit
 zypper -n al gnome-terminal gnome-terminal-lang nautilus-extension-terminal lftp easytag nautilus-plugin-easytag gedit
 
-#zypper -n rm zypper rpm | echo "done"
 
 # fix zypper config for update
 echo "installRecommends = no" >> /etc/zypp/zypper.conf
