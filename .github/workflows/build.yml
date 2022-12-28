@@ -4,8 +4,8 @@ on:
       - main    
 name: Build and Deploy  
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master    

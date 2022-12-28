@@ -15,9 +15,6 @@ trap error_exit ERR
 # カレントディレクトリ取得
 current_dir="$(cd "$(dirname "${0}")" && pwd)"
 
-# このスクリプトを実行したユーザー
-non_root_user=${SUDO_USER}
-
 # tmpfsの制限
 tmpfs_limit=8000M
 
