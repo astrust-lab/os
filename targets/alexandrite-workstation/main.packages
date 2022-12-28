@@ -86,7 +86,6 @@ libvulkan1
 libvulkan_radeon 
 libvulkan_intel
 libvulkan_lvp 
-vulkan-tools
 Mesa-vulkan-device-select
 bluez
 pipewire
@@ -183,3 +182,5 @@ desktop-file-utils
 shared-mime-info
 libgmime-3_0-0
 openssl
+distrobox
+podman
