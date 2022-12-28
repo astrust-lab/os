@@ -12,6 +12,7 @@ jobs:
       - name: build
         run: |
          sudo pip install kiwi
+         sudo apt install zypper -y
          sudo ./mkiso.sh -t alexandrite-workstation
 
       #- name: FTP Upload
