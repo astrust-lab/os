@@ -11,8 +11,8 @@ jobs:
       - uses: actions/checkout@master    
       - name: build
         run: |
-         pip install kiwi
-         ./mkiso.sh -t alexandrite-workstation
+         sudo pip install kiwi
+         sudo ./mkiso.sh -t alexandrite-workstation
 
       #- name: FTP Upload
       #  uses: SamKirkland/FTP-Deploy-Action@2.0.0   
