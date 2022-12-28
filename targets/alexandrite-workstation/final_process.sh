@@ -115,7 +115,7 @@ zypper -n al gnome-terminal gnome-terminal-lang nautilus-extension-terminal lftp
 echo "installRecommends = no" >> /etc/zypp/zypper.conf
 
 # Hide tty login prompt at tty1
-systemctl disable getty@tty1.service
+# systemctl disable getty@tty1.service
 
 # fix terminal
 ln -s /usr/bin/kgx /usr/bin/gnome-terminal
