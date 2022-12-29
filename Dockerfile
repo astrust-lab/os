@@ -10,7 +10,10 @@ FROM opensuse/tumbleweed
 
 COPY targets/astrust/main.packages .
 
-RUN zypper --non-interactive dup \
+RUN cd /etc/zypp/repos.d \
+ && cat repo-oss.repo | sed -i '/^baseurl=/c\\baseurl=https://ftp.riken.jp/Linux/opensuse/tumbleweed/repo/oss/' repo-oss.repo \
+ && cat repo-non-oss.repo | sed -i '/^baseurl=/c\\baseurl=https://ftp.riken.jp/Linux/opensuse/tumbleweed/repo/non-oss/' repo-non-oss.repo \
+ && zypper --non-interactive dup \
  && zypper --non-interactive in find createrepo \
  && zypper --non-interactive addrepo https://download.opensuse.org/repositories/home:Dead_Mozay:GNOME:Apps/openSUSE_Tumbleweed/home:Dead_Mozay:GNOME:Apps.repo \
  && zypper --non-interactive addrepo -f https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/ codecs \
