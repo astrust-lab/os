@@ -14,7 +14,7 @@ RUN cd /etc/zypp/repos.d \
  && sed -i '/^baseurl=/c\\baseurl=https://ftp.riken.jp/Linux/opensuse/tumbleweed/repo/oss/' repo-oss.repo \
  && sed -i '/^baseurl=/c\\baseurl=https://ftp.riken.jp/Linux/opensuse/tumbleweed/repo/non-oss/' repo-non-oss.repo \
  && sed -i '/^baseurl=/c\\baseurl=https://twrepo.opensuse.id/update/tumbleweed/' repo-update.repo \
- && cd /
+ && cd / \
  && zypper --non-interactive dup \
  && zypper --non-interactive in find createrepo \
  && zypper --non-interactive addrepo https://download.opensuse.org/repositories/home:Dead_Mozay:GNOME:Apps/openSUSE_Tumbleweed/home:Dead_Mozay:GNOME:Apps.repo \
