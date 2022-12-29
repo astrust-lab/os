@@ -9,13 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master    
-      - name: build
+      - name: build repo
         run: |
          sudo pip install kiwi
          sudo apt install zypper qemu-utils mtools docker-compose -y
          docker-compose up --build
          tar --zstd -cf astrust.osupd repo
-         sudo ./mkiso.sh -t astrust
+         sudo mkdir out
+         #sudo ./mkiso.sh -t astrust
          sudo mv astrust.osupd out/
 
       - name: FTP Upload
