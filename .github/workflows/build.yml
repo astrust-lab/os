@@ -12,8 +12,11 @@ jobs:
       - name: build
         run: |
          sudo pip install kiwi
-         sudo apt install zypper qemu-utils mtools -y
-         sudo ./mkiso.sh -t alexandrite-workstation
+         sudo apt install zypper qemu-utils mtools docker-compose -y
+         docker-compose up --build
+         tar --zstd -cf astrust.osupd repo
+         sudo ./mkiso.sh -t astrust
+         sudo mv astrust.osupd out/
 
       - name: FTP Upload
         uses: SamKirkland/FTP-Deploy-Action@2.0.0   
