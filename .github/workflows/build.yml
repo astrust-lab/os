@@ -14,7 +14,7 @@ jobs:
          sudo pip install kiwi
          sudo apt install zypper qemu-utils mtools docker-compose -y
          docker-compose up --build
-         tar --zstd -cf astrust.osupd repo
+         tar --zstd -cf astrust.osupd repo overlay
          sudo mkdir out
          #sudo ./mkiso.sh -t astrust
          sudo mv astrust.osupd out/
